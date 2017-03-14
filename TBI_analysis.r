@@ -139,4 +139,4 @@ abline(v=seq(0,5,1),lty=5,col="lightblue")
 
 
 #   Results:      One twenty eight patients and their families were interviewed. On average, patients with severe, moderate and minor TBI incurred direct costs at USD 2,365, USD 1,390 and USD 849, with time lost for normal activities averaging 54 weeks, 26 weeks and 17 weeks and years lived with disability (YLD) of 0.46, 0.25 and 0.15 year, respectively.
-#   Conclusion:   All three component costs of TBI were high; the direct cost accounted for the largest proportion, with costs rising with the severity of TBI. The results suggest that the burden of TBI can be catastrophic for families because of high direct costs, significant time off work for patients and caregivers, and impact on health-related quality of life. Further research is warranted to explore
+#   Conclusion:   All three component costs of TBI were high; the direct cost accounted for the largest proportion, with costs rising with the severity of TBI. The results suggest that the burden of TBI can be catastrophic for families because of high direct costs, significant time off work for patients and caregivers, and impact on heal
