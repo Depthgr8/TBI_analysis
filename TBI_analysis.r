@@ -40,13 +40,14 @@ x = as.numeric(as.vector(pfu_dc_d_frame[,1]))
 y = pfu_dc_d_frame[,2]
 dc_codes <- list("0 ~ 5,000 INR","5,000 ~ 10,000 INR","10,000 ~ 15,000 INR","15,000 ~ 20,000 INR")
 png(filename="~/AIIIMS work/TBI_analysis/plots/pfu_dc.png",width = 1200, height = 800)
-plot(x,y,main = "Direct cost involved in the care of TBI patients before follow-up",
+par(mfrow=c(2,1))
+barplot(y,main = "Direct cost involved in the care of TBI patients before follow-up",
      xlab="PFU Direct cost codes", ylab="Cases",
-     xlim=c(0,6), ylim=c(0,60),pch=16, col="blue")
-pie(x)
-text(x, y, row.names(pfu_dc_d_frame$Cases), cex=1, pos=1, col="blue",labels = dc_codes)
+     xlim=c(0,6), ylim=c(0,60),pch=16, col="gray")
+text(x, y, row.names(pfu_dc_d_frame$Cases), cex=1, pos=3, col="black",labels = dc_codes)
 abline(h=seq(0,40,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
+pie(y,labels = dc_codes)
 dev.off()
 
 # Pre follow up Indirect cost ---------------------------------------------
@@ -61,12 +62,14 @@ x = as.numeric(as.vector(pfu_idc_d_frame[,1]))
 y = pfu_idc_d_frame[,2]
 idc_codes <- list("Nil","0 ~ 5,000 INR","5,000 ~ 10,000 INR","10,000 ~ 15,000 INR","15,000 ~ 20,000 INR")
 png(filename="~/AIIIMS work/TBI_analysis/plots/pfu_idc.png",width = 1200, height = 800)
-plot(x,y,main = "Indirect cost up involved in the care of TBI patients before follow-up",
+par(mfrow=c(2,1))
+barplot(x,y,main = "Indirect cost up involved in the care of TBI patients before follow-up",
      xlab="PFU indirect cost codes", ylab="Cases",
      xlim=c(0,6), ylim=c(0,60),pch=16, col="blue")
-text(x, y, row.names(pfu_idc_d_frame$Cases), cex=1, pos=1, col="blue",labels = idc_codes)
+text(x, y, row.names(pfu_idc_d_frame$Cases), cex=1, pos=3, col="blue",labels = idc_codes)
 abline(h=seq(0,40,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
+pie(y,labels = idc_codes)
 dev.off()
 
 # Pre follow up Total expenditure -----------------------------------------
@@ -81,12 +84,14 @@ x = as.numeric(as.vector(pfu_te_d_frame[,1]))
 y = pfu_te_d_frame[,2]
 te_codes <- list("0 ~ 20,000 INR","20,000 ~ 40,000 INR","40,000 ~ 60,000 INR","Above 60,000 INR")
 png(filename="~/AIIIMS work/TBI_analysis/plots/pfu_te.png",width = 1200, height = 800)
-plot(x,y,main = "Total expenditure involved in the care of TBI patients before follow-up",
+par(mfrow=c(2,1))
+barplot(x,y,main = "Total expenditure involved in the care of TBI patients before follow-up",
      xlab="PFU total expenditure codes", ylab="Cases",
      xlim=c(0,6), ylim=c(0,60),pch=16, col="blue")
-text(x, y, row.names(pfu_te_d_frame$Cases), cex=1, pos=1, col="blue",labels = te_codes)
+text(x, y, row.names(pfu_te_d_frame$Cases), cex=1, pos=3, col="blue",labels = te_codes)
 abline(h=seq(0,40,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
+pie(y,labels = te_codes)
 dev.off()
 
 
@@ -104,12 +109,14 @@ x = as.numeric(dc_d_frame[,1])
 y = dc_d_frame[,2]
 dc_codes <- list("Nil","Between 0 and 10,000 INR","Between 20,000 and 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIIMS work/TBI_analysis/plots/fu1_dc.png",width = 1200, height = 800)
-plot(x,y,main = "Analysis of direct cost involved in the care of TBI patients",
+par(mfrow=c(2,1))
+barplot(x,y,main = "Analysis of direct cost involved in the care of TBI patients",
      xlab="Direct cost codes", ylab="Cases",
      xlim=c(min(x), max(x)), ylim=c(min(y), max(y)),pch=16, col="blue")
-text(x, y, row.names(dc_d_frame$Cases), cex=1, pos=2, col="blue",labels = dc_codes)
+text(x, y, row.names(dc_d_frame$Cases), cex=1, pos=3, col="blue",labels = dc_codes)
 abline(h=seq(0,40,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
+pie(y,labels = dc_codes)
 dev.off()
 
 # 2nd follow up Direct cost  ----------------------------------------------
@@ -124,12 +131,14 @@ x = as.numeric(dc_d_frame[,1])
 y = dc_d_frame[,2]
 dc_codes <- list("Nil","Between 0 and 10,000 INR","Between 20,000 and 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIIMS work/TBI_analysis/plots/fu2_dc.png",width = 1200, height = 800)
-plot(x,y,main = "Analysis of direct cost involved in the care of TBI patients",
+par(mfrow=c(2,1))
+barplot(x,y,main = "Analysis of direct cost involved in the care of TBI patients",
      xlab="Direct cost codes", ylab="Cases",
      xlim=c(min(x), max(x)), ylim=c(min(y), max(y)),pch=16, col="blue")
-text(x, y, row.names(dc_d_frame$Cases), cex=1, pos=2, col="blue",labels = dc_codes)
+text(x, y, row.names(dc_d_frame$Cases), cex=1, pos=3, col="blue",labels = dc_codes)
 abline(h=seq(0,40,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
+pie(y,labels = dc_codes)
 dev.off()
 
 # 3rd follow up Direct cost -----------------------------------------------
@@ -144,12 +153,14 @@ x = as.numeric(dc_d_frame[,1])
 y = dc_d_frame[,2]
 dc_codes <- list("Nil","Between 0 and 10,000 INR","Between 20,000 and 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIIMS work/TBI_analysis/plots/fu3_dc.png",width = 1200, height = 800)
-plot(x,y,main = "Analysis of direct cost involved in the care of TBI patients",
+par(mfrow=c(2,1))
+barplot(x,y,main = "Analysis of direct cost involved in the care of TBI patients",
      xlab="Direct cost codes", ylab="Cases",
      xlim=c(min(x), max(x)), ylim=c(min(y), max(y)),pch=16, col="blue")
-text(x, y, row.names(dc_d_frame$Cases), cex=1, pos=2, col="blue",labels = dc_codes)
+text(x, y, row.names(dc_d_frame$Cases), cex=1, pos=3, col="blue",labels = dc_codes)
 abline(h=seq(0,40,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
+pie(y,labels = dc_codes)
 dev.off()
 
 # 4th follow up Direct cost -----------------------------------------------
@@ -164,12 +175,14 @@ x = as.numeric(dc_d_frame[,1])
 y = dc_d_frame[,2]
 dc_codes <- list("Nil","Between 0 and 10,000 INR","Between 20,000 and 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIIMS work/TBI_analysis/plots/fu4_dc.png",width = 1200, height = 800)
-plot(x,y,main = "Analysis of direct cost involved in the care of TBI patients",
+par(mfrow=c(2,1))
+barplot(x,y,main = "Analysis of direct cost involved in the care of TBI patients",
      xlab="Direct cost codes", ylab="Cases",
      xlim=c(min(x), max(x)), ylim=c(min(y), max(y)),pch=16, col="blue")
-text(x, y, row.names(dc_d_frame$Cases), cex=1, pos=2, col="blue",labels = dc_codes)
+text(x, y, row.names(dc_d_frame$Cases), cex=1, pos=3, col="blue",labels = dc_codes)
 abline(h=seq(0,40,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
+pie(y,labels = dc_codes)
 dev.off()
 
 # 5th follow up Direct cost -----------------------------------------------
@@ -184,12 +197,14 @@ x = as.numeric(dc_d_frame[,1])
 y = dc_d_frame[,2]
 dc_codes <- list("Nil","Between 0 and 10,000 INR","Between 20,000 and 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIIMS work/TBI_analysis/plots/fu5_dc.png",width = 1200, height = 800)
-plot(x,y,main = "Analysis of direct cost involved in the care of TBI patients",
+par(mfrow=c(2,1))
+barplot(x,y,main = "Analysis of direct cost involved in the care of TBI patients",
      xlab="Direct cost codes", ylab="Cases",
      xlim=c(min(x), max(x)), ylim=c(min(y), max(y)),pch=16, col="blue")
-text(x, y, row.names(dc_d_frame$Cases), cex=1, pos=2, col="blue",labels = dc_codes)
+text(x, y, row.names(dc_d_frame$Cases), cex=1, pos=3, col="blue",labels = dc_codes)
 abline(h=seq(0,40,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
+pie(y,labels = dc_codes)
 dev.off()
 
 # 1st follow up Indirect cost ---------------------------------------------
@@ -204,12 +219,14 @@ x = as.numeric(as.vector(idc_d_frame[,1]))
 y = idc_d_frame[,2]
 idc_codes <- list("Nil","Between 0 and 10,000 INR","Between 10,000 to 20,000 INR","Between 20,000 and 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIIMS work/TBI_analysis/plots/fu1_idc.png",width = 1200, height = 800)
-plot(x,y,main = "Analysis of indirect cost involved in the care of TBI patients",
+par(mfrow=c(2,1))
+barplot(x,y,main = "Analysis of indirect cost involved in the care of TBI patients",
      xlab="Indirect cost codes", ylab="Cases",
      xlim=c(min(x), max(x)), ylim=c(min(y), max(y)),pch=16, col="blue")
-text(x, y, row.names(idc_d_frame$Cases), cex=1, pos=2, col="blue",labels = idc_codes)
+text(x, y, row.names(idc_d_frame$Cases), cex=1, pos=3, col="blue",labels = idc_codes)
 abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
+pie(y,labels = dc_codes)
 dev.off()
 
 # 2nd follow up Indirect cost ---------------------------------------------
@@ -224,12 +241,14 @@ x = as.numeric(as.vector(idc_d_frame[,1]))
 y = idc_d_frame[,2]
 idc_codes <- list("Nil","Between 0 and 10,000 INR","Between 10,000 to 20,000 INR","Between 20,000 and 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIIMS work/TBI_analysis/plots/fu2_idc.png",width = 1200, height = 800)
-plot(x,y,main = "Analysis of indirect cost involved in the care of TBI patients",
+par(mfrow=c(2,1))
+barplot(x,y,main = "Analysis of indirect cost involved in the care of TBI patients",
      xlab="Indirect cost codes", ylab="Cases",
      xlim=c(min(x), max(x)), ylim=c(min(y), max(y)),pch=16, col="blue")
-text(x, y, row.names(idc_d_frame$Cases), cex=1, pos=2, col="blue",labels = idc_codes)
+text(x, y, row.names(idc_d_frame$Cases), cex=1, pos=3, col="blue",labels = idc_codes)
 abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
+pie(y,labels = dc_codes)
 dev.off()
 
 # 3rd follow up Indirect cost ---------------------------------------------
@@ -244,12 +263,14 @@ x = as.numeric(as.vector(idc_d_frame[,1]))
 y = idc_d_frame[,2]
 idc_codes <- list("Nil","Between 0 and 10,000 INR","Between 10,000 to 20,000 INR","Between 20,000 and 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIIMS work/TBI_analysis/plots/fu3_idc.png",width = 1200, height = 800)
-plot(x,y,main = "Analysis of indirect cost involved in the care of TBI patients",
+par(mfrow=c(2,1))
+barplot(x,y,main = "Analysis of indirect cost involved in the care of TBI patients",
      xlab="Indirect cost codes", ylab="Cases",
      xlim=c(min(x), max(x)), ylim=c(min(y), max(y)),pch=16, col="blue")
-text(x, y, row.names(idc_d_frame$Cases), cex=1, pos=2, col="blue",labels = idc_codes)
+text(x, y, row.names(idc_d_frame$Cases), cex=1, pos=3, col="blue",labels = idc_codes)
 abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
+pie(y,labels = dc_codes)
 dev.off()
 
 # 4th follow up Indirect cost ---------------------------------------------
@@ -264,12 +285,14 @@ x = as.numeric(as.vector(idc_d_frame[,1]))
 y = idc_d_frame[,2]
 idc_codes <- list("Nil","Between 0 and 10,000 INR","Between 10,000 to 20,000 INR","Between 20,000 and 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIIMS work/TBI_analysis/plots/fu4_idc.png",width = 1200, height = 800)
-plot(x,y,main = "Analysis of indirect cost involved in the care of TBI patients",
+par(mfrow=c(2,1))
+barplot(x,y,main = "Analysis of indirect cost involved in the care of TBI patients",
      xlab="Indirect cost codes", ylab="Cases",
      xlim=c(min(x), max(x)), ylim=c(min(y), max(y)),pch=16, col="blue")
-text(x, y, row.names(idc_d_frame$Cases), cex=1, pos=2, col="blue",labels = idc_codes)
+text(x, y, row.names(idc_d_frame$Cases), cex=1, pos=3, col="blue",labels = idc_codes)
 abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
+pie(y,labels = dc_codes)
 dev.off()
 
 # 5th follow up Indirect cost ---------------------------------------------
@@ -284,15 +307,17 @@ x = as.numeric(as.vector(idc_d_frame[,1]))
 y = idc_d_frame[,2]
 idc_codes <- list("Nil","Between 0 and 10,000 INR","Between 10,000 to 20,000 INR","Between 20,000 and 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIIMS work/TBI_analysis/plots/fu5_idc.png",width = 1200, height = 800)
-plot(x,y,main = "Analysis of indirect cost involved in the care of TBI patients",
+par(mfrow=c(2,1))
+barplot(x,y,main = "Analysis of indirect cost involved in the care of TBI patients",
      xlab="Indirect cost codes", ylab="Cases",
      xlim=c(min(x), max(x)), ylim=c(min(y), max(y)),pch=16, col="blue")
-text(x, y, row.names(idc_d_frame$Cases), cex=1, pos=2, col="blue",labels = idc_codes)
+text(x, y, row.names(idc_d_frame$Cases), cex=1, pos=3, col="blue",labels = idc_codes)
 abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
+pie(y,labels = dc_codes)
 dev.off()
 
 # Analysis of Economic burden on TBI patients -----------------------------
 
-#   Results:      One twenty eight patients and their families were interviewed. On average, patients with severe, moderate and minor TBI incurred direct costs at USD 2,365, USD 1,390 and USD 849, with time lost for normal activities averaging 54 weeks, 26 weeks and 17 weeks and years lived with disability (YLD) of 0.46, 0.25 and 0.15 year, respectively.
-#   Conclusion:   All three component costs of TBI were high; the direct cost accounted for the largest proportion, with costs rising with the severity of TBI. The results suggest that the burden of TBI can be catastrophic for families because of high direct costs, significant time off work for patients and caregivers, and impact on heal
+#   Results:      
+#   Conclusion:   
