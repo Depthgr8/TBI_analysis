@@ -1,4 +1,4 @@
-# R Script to analyse Traumatic brain injury patient's data
+# R Script to analyse Traumatic brain injury patient's economic burden
 # Author: Deepak Sharma (computer Programmer, JPNATC -AIIMS New Delhi)
 # Start Date 7 March 2017
 
@@ -15,15 +15,9 @@ tbi <- loadWorkbook("TBI.xlsx")
 tbi_eco <- readWorksheet(tbi, sheet = "ECONOMIC", header = TRUE)
 
 # Setiing common parameters fr - First row, lr - Last row
+
 fr <- 1
 lr <- 128
-
-# General Analysis --------------------------------------------------------
-
-# Number of expired TBI patients
-
-no_expired <- count(is.na(tbi_eco$PFU_DIRECT_COST[fr:lr]))[2,2]
-noquote(paste("Number of expired patients : ", no_expired, sep=""))
 
 # Pre follow up Analysis ---------------------------------------------------
 
@@ -38,7 +32,7 @@ pfu_dc_d_frame
 x = as.numeric(as.vector(pfu_dc_d_frame[,1]))
 y = pfu_dc_d_frame[,2]
 dc_codes <- list("0 ~ 5,000 INR","5,000 ~ 10,000 INR","10,000 ~ 15,000 INR","15,000 ~ 20,000 INR")
-png(filename="~/AIIMS work/TBI_analysis/plots/pfu_dc.png",width = 1200, height = 800)
+png(filename="~/AIIMS work/TBI_analysis/plots/economic/pfu_dc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Direct cost involved in the care of TBI patients before follow-up",
      xlab="PFU Direct cost codes", ylab="Cases",
@@ -60,7 +54,7 @@ pfu_idc_d_frame
 x = as.numeric(as.vector(pfu_idc_d_frame[,1]))
 y = pfu_idc_d_frame[,2]
 idc_codes <- list("Nil","0 ~ 5,000 INR","5,000 ~ 10,000 INR","10,000 ~ 15,000 INR","15,000 ~ 20,000 INR")
-png(filename="~/AIIMS work/TBI_analysis/plots/pfu_idc.png",width = 1200, height = 800)
+png(filename="~/AIIMS work/TBI_analysis/plots/economic/pfu_idc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Indirect cost up involved in the care of TBI patients before follow-up",
      xlab="PFU indirect cost codes", ylab="Cases",
@@ -82,7 +76,7 @@ pfu_te_d_frame
 x = as.numeric(as.vector(pfu_te_d_frame[,1]))
 y = pfu_te_d_frame[,2]
 te_codes <- list("0 ~ 20,000 INR","20,000 ~ 40,000 INR","40,000 ~ 60,000 INR","Above 60,000 INR")
-png(filename="~/AIIMS work/TBI_analysis/plots/pfu_te.png",width = 1200, height = 800)
+png(filename="~/AIIMS work/TBI_analysis/plots/economic/pfu_te.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(y,main = "Total expenditure involved in the care of TBI patients before follow-up",
      xlab="PFU total expenditure codes", ylab="Cases",
@@ -107,7 +101,7 @@ dc_d_frame
 x = as.numeric(as.vector(dc_d_frame[,1]))
 y = dc_d_frame[,2]
 dc_codes <- list("Nil"," 0 ~ 5,000 INR","5,000 ~ 10,000 INR"," 10,000 ~ 15,000 INR"," 15,000 ~ 20,000 INR")
-png(filename="~/AIIMS work/TBI_analysis/plots/fu1_dc.png",width = 1200, height = 800)
+png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu1_dc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Direct cost",
      xlab="Direct cost codes", ylab="Cases",
@@ -129,7 +123,7 @@ dc_d_frame
 x = as.numeric(as.vector(dc_d_frame[,1]))
 y = dc_d_frame[,2]
 dc_codes <- list("Nil"," 0 ~ 5,000 INR","5,000 ~ 10,000 INR"," 10,000 ~ 15,000 INR"," 15,000 ~ 20,000 INR")
-png(filename="~/AIIMS work/TBI_analysis/plots/fu2_dc.png",width = 1200, height = 800)
+png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu2_dc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Direct cost",
      xlab="Direct cost codes", ylab="Cases",
@@ -151,7 +145,7 @@ dc_d_frame
 x = as.numeric(as.vector(dc_d_frame[,1]))
 y = dc_d_frame[,2]
 dc_codes <- list("Nil"," 0 ~ 5,000 INR","5,000 ~ 10,000 INR"," 15,000 ~ 20,000 INR")
-png(filename="~/AIIMS work/TBI_analysis/plots/fu3_dc.png",width = 1200, height = 800)
+png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu3_dc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Direct cost",
      xlab="Direct cost codes", ylab="Cases",
@@ -173,7 +167,7 @@ dc_d_frame
 x = as.numeric(as.vector(dc_d_frame[,1]))
 y = dc_d_frame[,2]
 dc_codes <- list("Nil"," 0 ~ 5,000 INR","5,000 ~ 10,000 INR"," 15,000 ~ 20,000 INR")
-png(filename="~/AIIMS work/TBI_analysis/plots/fu4_dc.png",width = 1200, height = 800)
+png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu4_dc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Direct cost",
      xlab="Direct cost codes", ylab="Cases",
@@ -195,7 +189,7 @@ dc_d_frame
 x = as.numeric(as.vector(dc_d_frame[,1]))
 y = dc_d_frame[,2]
 dc_codes <- list("Nil"," 0 ~ 5,000 INR","5,000 ~ 10,000 INR"," 15,000 ~ 20,000 INR")
-png(filename="~/AIIMS work/TBI_analysis/plots/fu5_dc.png",width = 1200, height = 800)
+png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu5_dc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Direct cost",
      xlab="Direct cost codes", ylab="Cases",
@@ -217,7 +211,7 @@ idc_d_frame
 x = as.numeric(as.vector(idc_d_frame[,1]))
 y = idc_d_frame[,2]
 idc_codes <- list("Nil"," 0 ~ 10,000 INR"," 10,000 to 20,000 INR"," 20,000 ~ 30,000 INR","Above 30,000 INR")
-png(filename="~/AIIMS work/TBI_analysis/plots/fu1_idc.png",width = 1200, height = 800)
+png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu1_idc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Indirect cost",
      xlab="Indirect cost codes", ylab="Cases",
@@ -239,7 +233,7 @@ idc_d_frame
 x = as.numeric(as.vector(idc_d_frame[,1]))
 y = idc_d_frame[,2]
 idc_codes <- list("Nil"," 0 ~ 10,000 INR"," 10,000 to 20,000 INR"," 20,000 ~ 30,000 INR","Above 30,000 INR")
-png(filename="~/AIIMS work/TBI_analysis/plots/fu2_idc.png",width = 1200, height = 800)
+png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu2_idc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Indirect cost",
      xlab="Indirect cost codes", ylab="Cases",
@@ -261,7 +255,7 @@ idc_d_frame
 x = as.numeric(as.vector(idc_d_frame[,1]))
 y = idc_d_frame[,2]
 idc_codes <- list("Nil"," 0 ~ 10,000 INR"," 10,000 to 20,000 INR"," 20,000 ~ 30,000 INR","Above 30,000 INR")
-png(filename="~/AIIMS work/TBI_analysis/plots/fu3_idc.png",width = 1200, height = 800)
+png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu3_idc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Indirect cost",
      xlab="Indirect cost codes", ylab="Cases",
@@ -283,7 +277,7 @@ idc_d_frame
 x = as.numeric(as.vector(idc_d_frame[,1]))
 y = idc_d_frame[,2]
 idc_codes <- list("Nil"," 0 ~ 10,000 INR"," 10,000 to 20,000 INR"," > 30,000 INR")
-png(filename="~/AIIMS work/TBI_analysis/plots/fu4_idc.png",width = 1200, height = 800)
+png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu4_idc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Indirect cost",
      xlab="Indirect cost codes", ylab="Cases",
@@ -305,7 +299,7 @@ idc_d_frame
 x = as.numeric(as.vector(idc_d_frame[,1]))
 y = idc_d_frame[,2]
 idc_codes <- list("Nil"," 0 ~ 10,000 INR"," 10,000 to 20,000 INR"," 20,000 ~ 30,000 INR","Above 30,000 INR")
-png(filename="~/AIIMS work/TBI_analysis/plots/fu5_idc.png",width = 1200, height = 800)
+png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu5_idc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Indirect cost",
      xlab="Indirect cost codes", ylab="Cases",
