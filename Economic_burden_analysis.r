@@ -35,9 +35,9 @@ dc_codes <- list("0 ~ 5,000 INR","5,000 ~ 10,000 INR","10,000 ~ 15,000 INR","15,
 png(filename="~/AIIMS work/TBI_analysis/plots/economic/pfu_dc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Direct cost involved in the care of TBI patients before follow-up",
-     xlab="PFU Direct cost codes", ylab="Cases",
-     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="black")
-abline(h=seq(0,40,5),lty=5,col="lightblue")
+     xlab="PFU Direct cost codes", ylab="Cases", type='o',
+     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="blue")
+abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
 text(x, y, row.names(pfu_dc_d_frame$Cases), cex=1.02, pos=3, col="black",labels = dc_codes)
 pie(y,labels = dc_codes)
@@ -57,9 +57,9 @@ idc_codes <- list("Nil","0 ~ 5,000 INR","5,000 ~ 10,000 INR","10,000 ~ 15,000 IN
 png(filename="~/AIIMS work/TBI_analysis/plots/economic/pfu_idc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(x,y,main = "Indirect cost up involved in the care of TBI patients before follow-up",
-     xlab="PFU indirect cost codes", ylab="Cases",
-     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="black")
-abline(h=seq(0,40,5),lty=5,col="lightblue")
+     xlab="PFU indirect cost codes", ylab="Cases", type='o',
+     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="blue")
+abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
 text(x, y, row.names(pfu_idc_d_frame$Cases), cex=1.02, pos=3, col="black",labels = idc_codes)
 pie(y,labels = idc_codes)
@@ -79,9 +79,9 @@ te_codes <- list("0 ~ 20,000 INR","20,000 ~ 40,000 INR","40,000 ~ 60,000 INR","A
 png(filename="~/AIIMS work/TBI_analysis/plots/economic/pfu_te.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
 plot(y,main = "Total expenditure involved in the care of TBI patients before follow-up",
-     xlab="PFU total expenditure codes", ylab="Cases",
-     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="black")
-abline(h=seq(0,40,5),lty=5,col="lightblue")
+     xlab="PFU total expenditure codes", ylab="Cases", type='o',
+     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="blue")
+abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
 text(x, y, row.names(pfu_te_d_frame$Cases), cex=1.02, pos=3, col="black",labels = te_codes)
 pie(y,labels = te_codes)
@@ -103,10 +103,10 @@ y = dc_d_frame[,2]
 dc_codes <- list("Nil"," 0 ~ 5,000 INR","5,000 ~ 10,000 INR"," 10,000 ~ 15,000 INR"," 15,000 ~ 20,000 INR")
 png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu1_dc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
-plot(x,y,main = "Direct cost",
+plot(x,y,main = "1st follow up Direct cost", type='o',
      xlab="Direct cost codes", ylab="Cases",
-     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="black")
-abline(h=seq(0,40,5),lty=5,col="lightblue")
+     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="blue")
+abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
 text(x, y, row.names(dc_d_frame$Cases), cex=1.02, pos=3, col="black",labels = dc_codes)
 pie(y,labels = dc_codes)
@@ -125,10 +125,10 @@ y = dc_d_frame[,2]
 dc_codes <- list("Nil"," 0 ~ 5,000 INR","5,000 ~ 10,000 INR"," 10,000 ~ 15,000 INR"," 15,000 ~ 20,000 INR")
 png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu2_dc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
-plot(x,y,main = "Direct cost",
+plot(x,y,main = "2nd follow up Direct cost", type='o',
      xlab="Direct cost codes", ylab="Cases",
-     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="black")
-abline(h=seq(0,40,5),lty=5,col="lightblue")
+     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="blue")
+abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
 text(x,y, row.names(dc_d_frame$Cases), cex=1.02, pos=3, col="black",labels = dc_codes)
 pie(y,labels = dc_codes)
@@ -147,10 +147,10 @@ y = dc_d_frame[,2]
 dc_codes <- list("Nil"," 0 ~ 5,000 INR","5,000 ~ 10,000 INR"," 15,000 ~ 20,000 INR")
 png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu3_dc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
-plot(x,y,main = "Direct cost",
+plot(x,y,main = "3rd follow up Direct cost", type='o',
      xlab="Direct cost codes", ylab="Cases",
-     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="black")
-abline(h=seq(0,40,5),lty=5,col="lightblue")
+     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="blue")
+abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
 text(x, y, row.names(dc_d_frame$Cases), cex=1.02, pos=3, col="black",labels = dc_codes)
 pie(y,labels = dc_codes)
@@ -169,10 +169,10 @@ y = dc_d_frame[,2]
 dc_codes <- list("Nil"," 0 ~ 5,000 INR","5,000 ~ 10,000 INR"," 15,000 ~ 20,000 INR")
 png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu4_dc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
-plot(x,y,main = "Direct cost",
+plot(x,y,main = "4th follow up Direct cost", type='o',
      xlab="Direct cost codes", ylab="Cases",
-     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="black")
-abline(h=seq(0,40,5),lty=5,col="lightblue")
+     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="blue")
+abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
 text(x, y, row.names(dc_d_frame$Cases), cex=1.02, pos=3, col="black",labels = dc_codes)
 pie(y,labels = dc_codes)
@@ -191,10 +191,10 @@ y = dc_d_frame[,2]
 dc_codes <- list("Nil"," 0 ~ 5,000 INR","5,000 ~ 10,000 INR"," 15,000 ~ 20,000 INR")
 png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu5_dc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
-plot(x,y,main = "Direct cost",
+plot(x,y,main = "5th follow up Direct cost", type='o',
      xlab="Direct cost codes", ylab="Cases",
-     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="black")
-abline(h=seq(0,40,5),lty=5,col="lightblue")
+     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="blue")
+abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
 text(x, y, row.names(dc_d_frame$Cases), cex=1.02, pos=3, col="black",labels = dc_codes)
 pie(y,labels = dc_codes)
@@ -213,13 +213,13 @@ y = idc_d_frame[,2]
 idc_codes <- list("Nil"," 0 ~ 10,000 INR"," 10,000 to 20,000 INR"," 20,000 ~ 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu1_idc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
-plot(x,y,main = "Indirect cost",
+plot(x,y,main = "1st follow up Indirect cost", type='o',
      xlab="Indirect cost codes", ylab="Cases",
-     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="black")
+     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="blue")
 abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
 text(x, y, row.names(idc_d_frame$Cases), cex=1.02, pos=3, col="black",labels = idc_codes)
-pie(y,labels = dc_codes)
+pie(y,labels = idc_codes)
 dev.off()
 
 # 2nd follow up Indirect cost ---------------------------------------------
@@ -235,13 +235,13 @@ y = idc_d_frame[,2]
 idc_codes <- list("Nil"," 0 ~ 10,000 INR"," 10,000 to 20,000 INR"," 20,000 ~ 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu2_idc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
-plot(x,y,main = "Indirect cost",
+plot(x,y,main = "2nd follow up Indirect cost", type='o',
      xlab="Indirect cost codes", ylab="Cases",
-     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="black")
+     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="blue")
 abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
 text(x, y, row.names(idc_d_frame$Cases), cex=1.02, pos=3, col="black",labels = idc_codes)
-pie(y,labels = dc_codes)
+pie(y,labels = idc_codes)
 dev.off()
 
 # 3rd follow up Indirect cost ---------------------------------------------
@@ -257,13 +257,13 @@ y = idc_d_frame[,2]
 idc_codes <- list("Nil"," 0 ~ 10,000 INR"," 10,000 to 20,000 INR"," 20,000 ~ 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu3_idc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
-plot(x,y,main = "Indirect cost",
+plot(x,y,main = "3rd follow up Indirect cost", type='o',
      xlab="Indirect cost codes", ylab="Cases",
-     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="black")
+     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="blue")
 abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
 text(x, y, row.names(idc_d_frame$Cases), cex=1.02, pos=3, col="black",labels = idc_codes)
-pie(y,labels = dc_codes)
+pie(y,labels = idc_codes)
 dev.off()
 
 # 4th follow up Indirect cost ---------------------------------------------
@@ -279,13 +279,13 @@ y = idc_d_frame[,2]
 idc_codes <- list("Nil"," 0 ~ 10,000 INR"," 10,000 to 20,000 INR"," > 30,000 INR")
 png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu4_idc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
-plot(x,y,main = "Indirect cost",
+plot(x,y,main = "4th follow up Indirect cost", type='o',
      xlab="Indirect cost codes", ylab="Cases",
-     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="black")
+     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="blue")
 abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
 text(x, y, row.names(idc_d_frame$Cases), cex=1.02, pos=3, col="black",labels = idc_codes)
-pie(y,labels = dc_codes)
+pie(y,labels = idc_codes)
 dev.off()
 
 # 5th follow up Indirect cost ---------------------------------------------
@@ -301,13 +301,13 @@ y = idc_d_frame[,2]
 idc_codes <- list("Nil"," 0 ~ 10,000 INR"," 10,000 to 20,000 INR"," 20,000 ~ 30,000 INR","Above 30,000 INR")
 png(filename="~/AIIMS work/TBI_analysis/plots/economic/fu5_idc.png",width = 1200, height = 800)
 par(mfrow=c(2,1))
-plot(x,y,main = "Indirect cost",
+plot(x,y,main = "5th follow up Indirect cost", type='o',
      xlab="Indirect cost codes", ylab="Cases",
-     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="black")
+     xlim=c(min(x)-1, max(x)+1), ylim=c(min(y)-10, max(y)+10),pch=16, col="blue")
 abline(h=seq(0,70,5),lty=5,col="lightblue")
 abline(v=seq(0,5,1),lty=5,col="lightblue")
 text(x, y, row.names(idc_d_frame$Cases), cex=1.02, pos=3, col="black",labels = idc_codes)
-pie(y,labels = dc_codes)
+pie(y,labels = idc_codes)
 dev.off()
 
 # Analysis of Economic burden on TBI patients -----------------------------
